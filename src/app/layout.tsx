@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'TrustFront - Decentralized Reputation',
-  description: 'Build your on-chain reputation with TrustFront.',
+  title: 'TrustLayer - Decentralized Reputation',
+  description: 'Build your on-chain reputation with TrustLayer.',
 };
 
 export default function RootLayout({
