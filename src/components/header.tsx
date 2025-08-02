@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { ShieldCheck, LogOut, Settings, Code, User, Sun, Moon, Github, Globe } from 'lucide-react';
+import { ShieldCheck, LogOut, Settings, Code, User, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -12,10 +12,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useRouter } from 'next/navigation';
 
 export function Header() {
-  const [isConnected, setIsConnected] = useState(false);
+  const [isConnected, setIsConnected] = useState(true); // Assume connected on dashboard
   const [isMounted, setIsMounted] = useState(false);
+  const router = useRouter();
   
   // Theme state must be managed carefully to avoid hydration mismatch
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -43,9 +45,24 @@ export function Header() {
       document.documentElement.classList.remove('dark');
     }
   };
+
+  const handleDisconnect = () => {
+    setIsConnected(false);
+    router.push('/');
+  };
   
   if (!isMounted) {
-    return null;
+    // Render a placeholder or null on the server to avoid hydration mismatch
+    return (
+        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="container flex h-16 items-center">
+                <div className="mr-4 flex items-center">
+                    <ShieldCheck className="h-6 w-6 mr-2 text-primary" />
+                    <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
+                </div>
+            </div>
+        </header>
+    );
   }
 
   return (
@@ -57,7 +74,7 @@ export function Header() {
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2 sm:space-x-4">
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <a href="#" className="text-foreground/60 transition-colors hover:text-foreground/80">Dashboard</a>
+            <a href="/dashboard" className="text-foreground/80 transition-colors hover:text-foreground">Dashboard</a>
             <a href="#" className="text-foreground/60 transition-colors hover:text-foreground/80">Developers</a>
             <a href="#" className="text-foreground/60 transition-colors hover:text-foreground/80">About</a>
           </nav>
@@ -93,14 +110,14 @@ export function Header() {
                     <span>API Keys</span>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => setIsConnected(false)}>
+                  <DropdownMenuItem onClick={handleDisconnect}>
                     <LogOut className="mr-2 h-4 w-4" />
                     <span>Disconnect</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button onClick={() => setIsConnected(true)} className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button onClick={() => router.push("/")} className="bg-accent text-accent-foreground hover:bg-accent/90">
                 Connect Wallet
               </Button>
             )}
