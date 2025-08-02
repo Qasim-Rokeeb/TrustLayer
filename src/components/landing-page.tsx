@@ -4,15 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ShieldCheck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useWallet } from "@/context/wallet-context";
+import { useEffect } from "react";
 
 export function LandingPage() {
   const router = useRouter();
+  const { isConnected, connectWallet } = useWallet();
 
-  const handleConnectWallet = () => {
-    // In a real app, this would trigger a wallet connection flow.
-    // For now, we'll just navigate to the dashboard.
-    router.push("/dashboard");
-  };
+  useEffect(() => {
+    if(isConnected) {
+      router.push("/dashboard");
+    }
+  }, [isConnected, router]);
+
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -23,7 +27,7 @@ export function LandingPage() {
             <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
           </div>
           <div className="flex flex-1 items-center justify-end">
-             <Button onClick={handleConnectWallet} className="bg-accent text-accent-foreground hover:bg-accent/90">
+             <Button onClick={connectWallet} className="bg-accent text-accent-foreground hover:bg-accent/90">
                 Connect Wallet
               </Button>
           </div>
@@ -39,7 +43,7 @@ export function LandingPage() {
               TrustLayer translates your digital and real-world actions into a portable, verifiable reputation score you can use across the decentralized web. Secure, self-sovereign, and built for the future of trust.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-               <Button onClick={handleConnectWallet} size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+               <Button onClick={connectWallet} size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                 Connect Wallet to Get Started
               </Button>
               <Button size="lg" variant="outline">Learn More</Button>

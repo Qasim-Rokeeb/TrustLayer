@@ -12,12 +12,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useRouter } from 'next/navigation';
+import { useWallet } from '@/context/wallet-context';
 
 export function Header() {
-  const [isConnected, setIsConnected] = useState(true); // Assume connected on dashboard
+  const { isConnected, userAddress, connectWallet, disconnectWallet } = useWallet();
   const [isMounted, setIsMounted] = useState(false);
-  const router = useRouter();
   
   // Theme state must be managed carefully to avoid hydration mismatch
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -44,11 +43,6 @@ export function Header() {
     } else {
       document.documentElement.classList.remove('dark');
     }
-  };
-
-  const handleDisconnect = () => {
-    setIsConnected(false);
-    router.push('/');
   };
   
   if (!isMounted) {
@@ -93,7 +87,7 @@ export function Header() {
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
                       <p className="text-sm font-medium leading-none">Wallet Connected</p>
-                      <p className="text-xs leading-none text-muted-foreground">0x1234...5678</p>
+                      <p className="text-xs leading-none text-muted-foreground truncate">{userAddress}</p>
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
@@ -110,14 +104,14 @@ export function Header() {
                     <span>API Keys</span>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleDisconnect}>
+                  <DropdownMenuItem onClick={disconnectWallet}>
                     <LogOut className="mr-2 h-4 w-4" />
                     <span>Disconnect</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button onClick={() => router.push("/")} className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button onClick={connectWallet} className="bg-accent text-accent-foreground hover:bg-accent/90">
                 Connect Wallet
               </Button>
             )}
