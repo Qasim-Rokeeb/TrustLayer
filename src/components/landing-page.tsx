@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ShieldCheck } from "lucide-react";
+import { Award, Code, Fingerprint, ShieldCheck, Verified } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useWallet } from "@/context/wallet-context";
@@ -61,7 +61,7 @@ export function LandingPage() {
           </div>
         </section>
 
-         <section className="bg-muted py-20 md:py-24">
+         <section id="how-it-works" className="bg-muted py-20 md:py-24">
             <div className="container">
                 <div className="max-w-3xl mx-auto text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold font-headline">How It Works</h2>
@@ -92,6 +92,71 @@ export function LandingPage() {
                 </div>
             </div>
         </section>
+
+        <section id="features" className="py-20 md:py-24">
+            <div className="container">
+                <div className="max-w-3xl mx-auto text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline">Core Features</h2>
+                    <p className="text-lg text-muted-foreground mt-4">Everything you need to build and leverage on-chain reputation.</p>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="p-6 border rounded-lg">
+                        <Fingerprint className="h-8 w-8 mb-4 text-primary" />
+                        <h3 className="text-xl font-bold mb-2">Decentralized Identity</h3>
+                        <p className="text-muted-foreground">Create a unique, self-sovereign identity anchored to your crypto wallet.</p>
+                    </div>
+                    <div className="p-6 border rounded-lg">
+                        <Verified className="h-8 w-8 mb-4 text-primary" />
+                        <h3 className="text-xl font-bold mb-2">Action Verification</h3>
+                        <p className="text-muted-foreground">A protocol for verifying actions like completed tasks or successful transactions.</p>
+                    </div>
+                    <div className="p-6 border rounded-lg">
+                        <Award className="h-8 w-8 mb-4 text-primary" />
+                        <h3 className="text-xl font-bold mb-2">Portable Reputation</h3>
+                        <p className="text-muted-foreground">A reputation score that can be leveraged across multiple dApps to unlock new opportunities.</p>
+                    </div>
+                    <div className="p-6 border rounded-lg">
+                        <Code className="h-8 w-8 mb-4 text-primary" />
+                        <h3 className="text-xl font-bold mb-2">Developer-Friendly API</h3>
+                        <p className="text-muted-foreground">A simple API for developers to query reputation scores and integrate them into applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="for-developers" className="bg-muted py-20 md:py-24">
+            <div className="container grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline">Built for Developers</h2>
+                    <p className="text-lg text-muted-foreground">
+                        Integrating TrustLayer into your dApp is seamless. With just a few lines of code, you can query a user's reputation score to enhance your application's logic.
+                    </p>
+                    <ul className="space-y-2 text-muted-foreground">
+                        <li>✓ Offer lower interest rates on loans</li>
+                        <li>✓ Grant access to exclusive features</li>
+                        <li>✓ Prevent Sybil attacks</li>
+                        <li>✓ Build more trusted communities</li>
+                    </ul>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                       <Button size="lg" variant="outline">View Docs</Button>
+                    </div>
+                </div>
+                <div className="bg-background rounded-lg shadow-lg p-6 font-mono text-sm text-foreground overflow-x-auto">
+                    <pre><code>
+<span className="text-purple-400">curl</span> -X GET <span className="text-green-400">"https://api.trustlayer.io/v1/reputation?address=0x..."</span> \
+-H <span className="text-green-400">"Authorization: Bearer YOUR_API_KEY"</span>
+                    </code></pre>
+                    <pre className="mt-4"><code>
+{`{
+  "address": "0x...",
+  "score": 850,
+  "rank": "Excellent"
+}`}
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+
       </main>
       <footer className="bg-background border-t">
           <div className="container py-6 text-center text-muted-foreground text-sm">
