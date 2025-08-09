@@ -126,7 +126,7 @@ export function LandingPage() {
 
         <section id="for-developers" className="bg-muted py-20 md:py-24">
             <div className="container grid lg:grid-cols-2 gap-16 items-center">
-                <div className="space-y-6">
+                <div className="space-y-6 lg:mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold font-headline">Built for Developers</h2>
                     <p className="text-lg text-muted-foreground">
                         Integrating TrustLayer into your dApp is seamless. With just a few lines of code, you can query a user's reputation score to enhance your application's logic.
