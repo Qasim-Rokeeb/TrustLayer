@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Award, Code, Fingerprint, Verified } from "lucide-react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { useWallet } from "@/context/wallet-context";
 import { useEffect } from "react";
 
@@ -23,7 +22,7 @@ export function LandingPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center">
           <div className="mr-4 flex items-center">
-            <Image src="/logo.png" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-primary"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
             <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
           </div>
           <div className="flex flex-1 items-center justify-end">
@@ -60,7 +59,7 @@ export function LandingPage() {
                 <div className="grid md:grid-cols-3 gap-10 text-center">
                     <div className="p-8 bg-background rounded-lg shadow-md">
                         <div className="inline-block p-4 bg-primary/10 rounded-full mb-4">
-                            <Image src="/logo.png" alt="TrustLayer DID" width={32} height={32} className="text-primary" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
                         </div>
                         <h3 className="text-xl font-bold mb-2">Create Your DID</h3>
                         <p className="text-muted-foreground">Connect your wallet to establish a unique and self-sovereign Decentralized Identity (DID).</p>
