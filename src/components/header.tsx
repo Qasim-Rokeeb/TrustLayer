@@ -51,7 +51,7 @@ export function Header() {
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-16 items-center">
                 <div className="mr-4 flex items-center">
-                    <Image src="/logo.svg" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
+                    <Image src="/logo.png" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
                     <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
                 </div>
             </div>
@@ -63,7 +63,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex items-center">
-            <Image src="/logo.svg" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
+            <Image src="/logo.png" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
           <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2 sm:space-x-4">

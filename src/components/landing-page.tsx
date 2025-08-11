@@ -23,7 +23,7 @@ export function LandingPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center">
           <div className="mr-4 flex items-center">
-            <Image src="/logo.svg" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
+            <Image src="/logo.png" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
             <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
           </div>
           <div className="flex flex-1 items-center justify-end">
@@ -60,7 +60,7 @@ export function LandingPage() {
                 <div className="grid md:grid-cols-3 gap-10 text-center">
                     <div className="p-8 bg-background rounded-lg shadow-md">
                         <div className="inline-block p-4 bg-primary/10 rounded-full mb-4">
-                            <Image src="/logo.svg" alt="TrustLayer DID" width={32} height={32} className="text-primary" />
+                            <Image src="/logo.png" alt="TrustLayer DID" width={32} height={32} className="text-primary" />
                         </div>
                         <h3 className="text-xl font-bold mb-2">Create Your DID</h3>
                         <p className="text-muted-foreground">Connect your wallet to establish a unique and self-sovereign Decentralized Identity (DID).</p>
