@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { ShieldCheck, LogOut, Settings, Code, User, Sun, Moon } from 'lucide-react';
+import { LogOut, Settings, Code, User, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useWallet } from '@/context/wallet-context';
+import Image from 'next/image';
 
 export function Header() {
   const { isConnected, userAddress, connectWallet, disconnectWallet } = useWallet();
@@ -50,7 +51,7 @@ export function Header() {
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-16 items-center">
                 <div className="mr-4 flex items-center">
-                    <ShieldCheck className="h-6 w-6 mr-2 text-primary" />
+                    <Image src="/logo.svg" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
                     <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
                 </div>
             </div>
@@ -62,7 +63,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex items-center">
-          <ShieldCheck className="h-6 w-6 mr-2 text-primary" />
+            <Image src="/logo.svg" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
           <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2 sm:space-x-4">
