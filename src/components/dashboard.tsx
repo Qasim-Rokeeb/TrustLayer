@@ -36,9 +36,9 @@ export function Dashboard() {
       </div>
 
       <TabsContent value="dashboard">
-        <div className="grid gap-6 lg:grid-cols-12">
+        <div className="grid gap-8 md:grid-cols-3">
           {/* Left Column */}
-          <div className="lg:col-span-4 xl:col-span-3 space-y-6">
+          <div className="md:col-span-1 space-y-8">
             <Card className="overflow-hidden">
               <CardHeader className="flex flex-row items-start justify-between bg-muted/50 p-4">
                 <CardTitle className="text-lg">Profile</CardTitle>
@@ -74,7 +74,7 @@ export function Dashboard() {
           </div>
 
           {/* Right Column */}
-          <div className="lg:col-span-8 xl:col-span-9 space-y-6">
+          <div className="md:col-span-2 space-y-8">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
