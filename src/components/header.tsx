@@ -51,7 +51,7 @@ export function Header() {
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-16 items-center">
                 <div className="mr-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-primary"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    <Image src="/trustlayer.svg" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
                     <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
                 </div>
             </div>
@@ -63,7 +63,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-primary"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            <Image src="/trustlayer.svg" alt="TrustLayer Logo" width={24} height={24} className="mr-2" />
           <h1 className="text-lg font-bold font-headline">TrustLayer</h1>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2 sm:space-x-4">
