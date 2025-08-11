@@ -142,12 +142,10 @@ export function LandingPage() {
                     </div>
                 </div>
                 <div className="bg-background rounded-lg shadow-lg p-6 font-mono text-sm text-foreground overflow-x-auto">
-                    <pre><code>
-<span className="text-purple-400">curl</span> -X GET <span className="text-green-400">"https://api.trustlayer.io/v1/reputation?address=0x..."</span> \
--H <span className="text-green-400">"Authorization: Bearer YOUR_API_KEY"</span>
-                    </code></pre>
-                    <pre className="mt-4"><code>
-{`{
+                    <pre><code className="language-bash"><span className="text-[#89b4fa]">curl</span> -X GET <span className="text-[#a6e3a1]">"https://api.trustlayer.io/v1/reputation?address=0x..."</span> \
+-H <span className="text-[#a6e3a1]">"Authorization: Bearer YOUR_API_KEY"</span></code></pre>
+                    <div className="my-4 border-t border-border -mx-6"></div>
+                    <pre><code className="language-json">{`{
   "address": "0x...",
   "score": 850,
   "rank": "Excellent"
