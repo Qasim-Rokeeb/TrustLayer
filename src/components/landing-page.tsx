@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Award, Code, Fingerprint, Verified } from "lucide-react";
+import { Award, Code, Fingerprint, Verified, Building, Users, ShieldCheck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useWallet } from "@/context/wallet-context";
 import { useEffect } from "react";
@@ -49,6 +49,41 @@ export function LandingPage() {
               <Button size="lg" variant="outline">Learn More</Button>
             </div>
           </div>
+        </section>
+
+        <section id="why-trustlayer" className="py-20 md:py-24">
+            <div className="container">
+                <div className="max-w-3xl mx-auto text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline">A New Standard for Digital Trust</h2>
+                    <p className="text-lg text-muted-foreground mt-4">Traditional reputation is fragmented and controlled by platforms. TrustLayer gives you ownership of your identity, creating a unified, user-centric trust layer for the entire decentralized ecosystem.</p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-10">
+                    <div className="text-center p-8 border rounded-lg">
+                        <h3 className="text-xl font-bold mb-2">The Problem</h3>
+                        <ul className="space-y-3 text-muted-foreground text-left">
+                            <li className="flex items-start"><span className="text-destructive mr-2 mt-1">✗</span>Reputation is locked in silos.</li>
+                            <li className="flex items-start"><span className="text-destructive mr-2 mt-1">✗</span>Users have no control or ownership.</li>
+                            <li className="flex items-start"><span className="text-destructive mr-2 mt-1">✗</span>Difficult to establish trust in new dApps.</li>
+                        </ul>
+                    </div>
+                     <div className="text-center p-8 border rounded-lg">
+                        <h3 className="text-xl font-bold mb-2">The Solution</h3>
+                        <ul className="space-y-3 text-muted-foreground text-left">
+                           <li className="flex items-start"><span className="text-primary mr-2 mt-1">✓</span>A single, portable reputation score.</li>
+                           <li className="flex items-start"><span className="text-primary mr-2 mt-1">✓</span>Self-sovereign identity owned by you.</li>
+                           <li className="flex items-start"><span className="text-primary mr-2 mt-1">✓</span>Instantly verifiable trust for any dApp.</li>
+                        </ul>
+                    </div>
+                     <div className="text-center p-8 border rounded-lg">
+                         <h3 className="text-xl font-bold mb-2">The Impact</h3>
+                         <ul className="space-y-3 text-muted-foreground text-left">
+                           <li className="flex items-start"><span className="text-accent mr-2 mt-1">→</span>Reduced friction and risk in digital interactions.</li>
+                           <li className="flex items-start"><span className="text-accent mr-2 mt-1">→</span>New economic opportunities unlocked.</li>
+                           <li className="flex items-start"><span className="text-accent mr-2 mt-1">→</span>A more fair and transparent digital world.</li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
          <section id="how-it-works" className="bg-muted py-20 md:py-24">
@@ -114,7 +149,34 @@ export function LandingPage() {
             </div>
         </section>
 
-        <section id="for-developers" className="bg-muted py-20 md:py-24">
+        <section id="use-cases" className="bg-muted py-20 md:py-24">
+            <div className="container">
+                <div className="max-w-3xl mx-auto text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline">Who is TrustLayer For?</h2>
+                    <p className="text-lg text-muted-foreground mt-4">TrustLayer empowers all participants of the decentralized web.</p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-10 text-left">
+                    <div className="p-8 bg-background rounded-lg shadow-md">
+                        <Building className="h-8 w-8 mb-4 text-primary" />
+                        <h3 className="text-xl font-bold mb-2">For dApps & Protocols</h3>
+                        <p className="text-muted-foreground">Reduce risk, prevent fraud, and build trusted communities. Offer better terms to users with a proven track record, and protect your platform from Sybil attacks.</p>
+                    </div>
+                     <div className="p-8 bg-background rounded-lg shadow-md">
+                        <Users className="h-8 w-8 mb-4 text-primary" />
+                        <h3 className="text-xl font-bold mb-2">For Individuals</h3>
+                        <p className="text-muted-foreground">Build a holistic on-chain identity that you own and control. Leverage your good reputation to access better rates in DeFi, unlock exclusive governance rights in DAOs, and prove your credibility in the metaverse.</p>
+                    </div>
+                     <div className="p-8 bg-background rounded-lg shadow-md">
+                        <ShieldCheck className="h-8 w-8 mb-4 text-primary" />
+                        <h3 className="text-xl font-bold mb-2">For the Ecosystem</h3>
+                        <p className="text-muted-foreground">Create a fundamental layer of trust that makes the entire decentralized web safer and more efficient. Foster a meritocratic environment where reputation is earned and portable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="for-developers" className="py-20 md:py-24">
             <div className="container grid lg:grid-cols-2 gap-16 items-center">
                 <div className="space-y-6 mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold font-headline">Built for Developers</h2>
