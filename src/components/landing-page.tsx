@@ -34,7 +34,8 @@ export function LandingPage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="container grid lg:grid-cols-1 gap-16 items-center py-20 md:py-32">
+        <section className="relative container grid lg:grid-cols-1 gap-16 items-center py-20 md:py-32">
+          <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(#2d3748_1px,transparent_1px)] [background-size:32px_32px]"></div>
           <div className="space-y-6 text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline tracking-tighter">
               Build Your On-Chain Reputation
@@ -124,23 +125,23 @@ export function LandingPage() {
                     <h2 className="text-3xl md:text-4xl font-bold font-headline">Core Features</h2>
                     <p className="text-lg text-muted-foreground mt-4">Everything you need to build and leverage on-chain reputation.</p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="p-8 border rounded-lg">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div className="p-8 border rounded-lg flex flex-col items-center">
                         <Fingerprint className="h-8 w-8 mb-4 text-primary" />
                         <h3 className="text-xl font-bold mb-2">Decentralized Identity</h3>
                         <p className="text-muted-foreground">Create a unique, self-sovereign identity anchored to your crypto wallet.</p>
                     </div>
-                    <div className="p-8 border rounded-lg">
+                    <div className="p-8 border rounded-lg flex flex-col items-center">
                         <Verified className="h-8 w-8 mb-4 text-primary" />
                         <h3 className="text-xl font-bold mb-2">Action Verification</h3>
                         <p className="text-muted-foreground">A protocol for verifying actions like completed tasks or successful transactions.</p>
                     </div>
-                    <div className="p-8 border rounded-lg">
+                    <div className="p-8 border rounded-lg flex flex-col items-center">
                         <Award className="h-8 w-8 mb-4 text-primary" />
                         <h3 className="text-xl font-bold mb-2">Portable Reputation</h3>
                         <p className="text-muted-foreground">A reputation score that can be leveraged across multiple dApps to unlock new opportunities.</p>
                     </div>
-                    <div className="p-8 border rounded-lg">
+                    <div className="p-8 border rounded-lg flex flex-col items-center">
                         <Code className="h-8 w-8 mb-4 text-primary" />
                         <h3 className="text-xl font-bold mb-2">Developer-Friendly API</h3>
                         <p className="text-muted-foreground">A simple API for developers to query reputation scores and integrate them into applications.</p>
@@ -155,18 +156,18 @@ export function LandingPage() {
                     <h2 className="text-3xl md:text-4xl font-bold font-headline">Who is TrustLayer For?</h2>
                     <p className="text-lg text-muted-foreground mt-4">TrustLayer empowers all participants of the decentralized web.</p>
                 </div>
-                <div className="grid md:grid-cols-3 gap-10 text-left">
-                    <div className="p-8 bg-background rounded-lg shadow-md">
+                <div className="grid md:grid-cols-3 gap-10 text-center">
+                    <div className="p-8 bg-background rounded-lg shadow-md flex flex-col items-center">
                         <Building className="h-8 w-8 mb-4 text-primary" />
                         <h3 className="text-xl font-bold mb-2">For dApps & Protocols</h3>
                         <p className="text-muted-foreground">Reduce risk, prevent fraud, and build trusted communities. Offer better terms to users with a proven track record, and protect your platform from Sybil attacks.</p>
                     </div>
-                     <div className="p-8 bg-background rounded-lg shadow-md">
+                     <div className="p-8 bg-background rounded-lg shadow-md flex flex-col items-center">
                         <Users className="h-8 w-8 mb-4 text-primary" />
                         <h3 className="text-xl font-bold mb-2">For Individuals</h3>
                         <p className="text-muted-foreground">Build a holistic on-chain identity that you own and control. Leverage your good reputation to access better rates in DeFi, unlock exclusive governance rights in DAOs, and prove your credibility in the metaverse.</p>
                     </div>
-                     <div className="p-8 bg-background rounded-lg shadow-md">
+                     <div className="p-8 bg-background rounded-lg shadow-md flex flex-col items-center">
                         <ShieldCheck className="h-8 w-8 mb-4 text-primary" />
                         <h3 className="text-xl font-bold mb-2">For the Ecosystem</h3>
                         <p className="text-muted-foreground">Create a fundamental layer of trust that makes the entire decentralized web safer and more efficient. Foster a meritocratic environment where reputation is earned and portable.</p>
